@@ -1,0 +1,15 @@
+<header>Dynamically Added Form Control</header>
+<form (ngSubmit)="onSubmit()" [formGroup]="formGroupName">
+  <div>
+    <label for="label"> Label : </label>
+    <input type="text" name="label" id="label" formControlName="label">
+  </div>
+  <div formArrayName="labelDynamic">
+    <button (click)="addLabel()">Add Another Label</button>
+    <div *ngFor="let label of control;let i=index">
+      <input type="text" name="labelDynamic" [formControlName]="i"/>
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+  <br>
+</form>

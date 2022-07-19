@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="formGroupname">
+  <div class="form-group">
+    <label for="label"> Label : </label>
+    <input type="text" id="label" name="label" class="form-control" formControlName="label">
+  </div>
+  <span *ngIf="formGroupname.get('label')?.invalid && formGroupname.get('label')?.touched">Please fill</span>
+  <br>
+  <button type="submit">Submit</button>
+</form>

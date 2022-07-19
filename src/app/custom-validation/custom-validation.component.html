@@ -1,0 +1,8 @@
+<header>Custom Validation</header>
+<form (ngSubmit)="onSubmit()" [formGroup]="formGroupName">
+<div>
+  <label for="label"> Label : </label>
+  <input type="text" name="label" id="label" formControlName="label"/>
+</div>
+<button type="submit">Submit</button>
+</form>

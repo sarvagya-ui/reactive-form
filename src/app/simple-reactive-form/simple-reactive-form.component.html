@@ -1,0 +1,12 @@
+<header>simple-reactive-form</header>
+<form [formGroup]="formGroupname" (ngSubmit)="onSubmit()">
+ <div class="form-group">
+  <label for="label1"> Label 1 : </label>
+  <input type="text" class="form-control" name="label1" id="label1" formControlName="label1">
+ </div>
+ <div class="form-group">
+  <label for="label2"> Label 2 : </label>
+  <input type="text" class="form-control" name="label2" id="label2" formControlName="label2">
+ </div>
+ <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,17 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="formGroupName">
+  <div formGroupName="group">
+    <div class="form-group">
+      <label for="label1"> Label 1: </label>
+      <input type="text" name="label1" id="label1" class="form-control" formControlName="label1" >
+    </div>
+    <div class="form-group">
+      <label for="label2"> Label 2: </label>
+      <input type="text" name="label2" id="label2" class="form-control" formControlName="label2" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="label3"> Label 3 :</label>
+    <input type="text" name="label3" id="label3" class="form-control" formControlName="label3">
+  </div>
+  <button type="submit">Submit</button>
+</form>
