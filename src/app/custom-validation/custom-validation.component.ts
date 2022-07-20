@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-custom-validation',
@@ -9,16 +9,21 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class CustomValidationComponent implements OnInit {
   formGroupName !: FormGroup;
   constructor() { }
+  restrictedValue = ["hello world","hi world"];
 
   ngOnInit(): void {
     this.formGroupName = new FormGroup({
-      'label' : new FormControl('please fill')
+      'label': new FormControl(null,[Validators.required,this.isRestricted.bind(this)],)
     })
   }
-  onSubmit(){
+  onSubmit() {
     console.log(this.formGroupName);
-
   }
 
-
+ isRestricted(control: FormControl){
+  if(this.restrictedValue.includes(control.value)){
+    return { 'isRestricted' : true};
+  }
+  return null;
+ }
 }

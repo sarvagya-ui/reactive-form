@@ -1,8 +1,10 @@
 <header>Custom Validation</header>
 <form (ngSubmit)="onSubmit()" [formGroup]="formGroupName">
-<div>
-  <label for="label"> Label : </label>
-  <input type="text" name="label" id="label" formControlName="label"/>
-</div>
-<button type="submit">Submit</button>
+  <div>
+    <label for="label"> Label : </label>
+    <input type="text" name="label" id="label" formControlName="label" />
+  </div>
+   <!-- Custom Message-->
+  <span *ngIf="formGroupName.get('label')?.errors?.['isRestricted']">Hi or Hello World is given</span>
+  <button type="submit">Submit</button>
 </form>
